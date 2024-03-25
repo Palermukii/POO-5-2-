@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-/* run this program using the console pauser or add your own getch, system("pause") or input loop */
-
 int main(int argc, char *argv[]) {
-
+	
+	int seguir = 1; 
+	int decision;
+	
 void ej1() {
 	int a;
 	printf("Ingrese un numero para ver si es positivo o negativo: ");
@@ -75,29 +75,29 @@ void ej4() {
 		printf("B y C son los mayores\n");
 	}
 }
-	
-	
-	
-	int decision;
-	printf("Los programas a elegir son estos:\n1. Positivo o Negativo\n2. Par o Impar\n3. Multiplo de 2 y/o 3\n4. Mayor de los 3\n");
-	printf("Elija el programa que desea ejecutar: ");
-	scanf("%d", &decision);
-	switch(decision) {
-		case 1: 
-		ej1();
-		break;
-		case 2: 
-		ej2();
-		break;
-		case 3: 
-		ej3();
-		break;
-		case 4: 
-		ej4();
-		break;
-	}
-	
 
+    while(seguir == 1) {
+        int decision;
+        printf("Los programas a elegir son estos:\n1. Positivo o Negativo\n2. Par o Impar\n3. Multiplo de 2 y/o 3\n4. Mayor de los 3\n");
+        printf("Elija el programa que desea ejecutar: ");
+        scanf("%d", &decision);
+        switch(decision) {
+            case 1: 
+                ej1();
+                break;
+            case 2: 
+                ej2();
+                break;
+            case 3: 
+                ej3();
+                break;
+            case 4: 
+                ej4();
+                break;
+        }
+        printf("Desea volver a ejecutar el programa (1/2): ");
+        scanf(" %d", &seguir); 
+    }
 	
 
 	return 0;
