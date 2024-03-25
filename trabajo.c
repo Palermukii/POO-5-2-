@@ -79,7 +79,7 @@ void ej4() {
     while(seguir == 1) {
         int decision;
         printf("Los programas a elegir son estos:\n1. Positivo o Negativo\n2. Par o Impar\n3. Multiplo de 2 y/o 3\n4. Mayor de los 3\n");
-        printf("Elija el programa que desea ejecutar: ");
+        printf("\nElija el programa que desea ejecutar: ");
         scanf("%d", &decision);
         switch(decision) {
             case 1: 
@@ -95,7 +95,7 @@ void ej4() {
                 ej4();
                 break;
         }
-        printf("Desea volver a ejecutar el programa (1/2): ");
+        printf("\nDesea volver a ejecutar el programa (1/2): ");
         scanf(" %d", &seguir); 
     }
 	
