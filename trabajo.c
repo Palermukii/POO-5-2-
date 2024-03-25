@@ -94,6 +94,9 @@ void ej4() {
             case 4: 
                 ej4();
                 break;
+	    default:
+            	printf("No se ha elegido ningun programa");
+            	break;
         }
         printf("\nDesea volver a ejecutar el programa (1/2): ");
         scanf(" %d", &seguir); 
