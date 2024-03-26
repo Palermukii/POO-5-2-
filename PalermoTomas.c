@@ -42,16 +42,18 @@ int main(int argc, char *argv[]) {
 		printf("La comision del vendedor es %.2f y el total es %.2f\n", comision, total);
 	}
 	void ej3() {
-		int promedioparcial;
+		int parcial1, parcial2, parcial3;
+		double promedioparcial;
 		int examenfinal;
 		int trabajofinal;
 		printf("Si desea saber su calificacion final ingrese lo siguiente.\n");
-		printf("Promedio de las notas de los 3 parciales: ");
-		scanf("%d", &promedioparcial);
+		printf("Las notas de los 3 parciales: ");
+		scanf("%d %d %d", &parcial1, &parcial2, &parcial3);
 		printf("Calificacion del examen final: ");
 		scanf("%d", &examenfinal);
 		printf("Calificacion del trabajo final: ");
 		scanf("%d", &trabajofinal);
+		promedioparcial = (parcial1 + parcial2 + parcial3) / 3; 
 		double promedio = (promedioparcial * 0.55) + (examenfinal * 0.3) + (trabajofinal * 0.15);
 		printf("Su promedio es %.2f\n", promedio);
 	}
