@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
 			precio = 6000;
 			precioalumno = 6000.00 / alumnos;
 			}
-		printf("Hay %d alumnos, cada uno debe pagar %.2f pesos y el costo total es %d", alumnos, precioalumno, precio);
+		printf("Hay %d alumnos, cada uno debe pagar %.2f pesos y el costo total es %d\n", alumnos, precioalumno, precio);
 	}
 	void ej2() {
 		int base;
@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
 		scanf("%d %d %d %d", &base, &venta1, &venta2, &venta3);
 		double comision = venta1 * 0.1 + venta2 * 0.1 + venta3 * 0.1;
 		double total = comision + base;
-		printf("La comision del vendedor es %.2f y el total es %.2f", comision, total);
+		printf("La comision del vendedor es %.2f y el total es %.2f\n", comision, total);
 	}
 	void ej3() {
 		int promedioparcial;
@@ -53,7 +53,7 @@ int main(int argc, char *argv[]) {
 		printf("Calificacion del trabajo final: ");
 		scanf("%d", &trabajofinal);
 		double promedio = (promedioparcial * 0.55) + (examenfinal * 0.3) + (trabajofinal * 0.15);
-		printf("Su promedio es %.2f", promedio);
+		printf("Su promedio es %.2f\n", promedio);
 	}
 	void ej4() {
 		int a;
@@ -66,6 +66,7 @@ int main(int argc, char *argv[]) {
 			}
 			
 		}
+		printf("\n");
 	}
 	void ej5() {
 		printf("Digite los kilometros donde se encuentran los autos\n(siendo el primero el de mas kilometros y el segundo el de menos): ");
@@ -77,12 +78,14 @@ int main(int argc, char *argv[]) {
 			auto2++;
 		}
 		double encuentro = (auto1 + auto2) / 2.0;
-			printf("Los autos se encuentran en el km %f", encuentro);
+			printf("Los autos se encuentran en el km %.2f\n", encuentro);
 
 	}
 	
 	while(seguir == 1) {
 			int decision;
+			
+        	printf("Los programas a elegir son estos:\n1. Alumnos, viaje de estudios\n2. Ventas y comisiones\n3. Calificacion Final\n4. Numeros Pares\n5. Encuentro de autos\n");
 			printf("Elija el programa a ejecutar: ");
 			scanf("%d", &decision);
 			
@@ -103,14 +106,13 @@ int main(int argc, char *argv[]) {
 				ej5();
 				break;
 			default:
-				printf("No existe ese programa");
+				printf("No existe ese programa\n");
 				break;
-			printf("\nDesea volver a ejecutar el programa (1/2): ");
-        scanf(" %d", &seguir); 
-	}}
-	
-	
-	
+			
+	}
+		printf("\nDesea volver a ejecutar el programa (1/2): ");
+    	scanf(" %d", &seguir); 
+	}
 	
 	return 0;
 }
