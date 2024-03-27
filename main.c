@@ -71,44 +71,48 @@ int main() {
 		scanf("%d", &sueldo);
 		if(sueldo <= 202) {
 			impuesto = 0;
-			printf("El sueldo es de $%d y el impuesto de $%.2f", sueldo, impuesto);
 		}
-		else if(sueldo > 202 && sueldo <= 607) {
+		else if(sueldo <= 607) {
 			impuesto = (double)sueldo * 0.05;
-			printf("El sueldo es de $%d y el impuesto de $%.2f", sueldo, impuesto);
 		}
-		else if(sueldo > 607 && sueldo <= 1013) {
+		else if(sueldo <= 1013) {
 			impuesto = sueldo * 0.1;
-			printf("El sueldo es de $%d y el impuesto de $%.2f", sueldo, impuesto);
 		}
-		else if(sueldo > 1013 && sueldo <= 1418) {
+		else if(sueldo <= 1418) {
 			impuesto = sueldo * 0.15;
-			printf("El sueldo es de $%d y el impuesto de $%.2f", sueldo, impuesto);
 		}
 		else {
 			impuesto = sueldo * 0.25;
-			printf("El sueldo es de $%d y el impuesto de $%.2f", sueldo, impuesto);
 		}
+		printf("El sueldo es de $%d y el impuesto de $%.2f", sueldo, impuesto);
 	}
 	void ej7() {
 		int horas;
 		int minutos;
 		printf("Ingrese la hora: ");
 		scanf("%d %d", &horas, &minutos);
-		if(horas == 12) {
-			printf("%d:%d PM", horas, minutos);
-		}
-		else if(horas == 0) {
-			printf("%d:%d AM", horas + 12, minutos);
-		}
-		else if(horas > 12) {
-			printf("%d:%d PM ", horas - 12, minutos);
-		}
-		else {
+		
+		if(horas < 13) {
+			if(horas == 0) {
+				printf("%d:%d AM", horas + 12, minutos);
+			}
+			else {
 			printf("%d:%d AM", horas, minutos);
+			}
 		}
+ 		if(horas > 12) {
+			if(horas == 12) {
+				printf("%d:%d PM", horas, minutos);
+		}
+			else {
+				printf("%d:%d PM ", horas - 12, minutos);
+		}
+		}
+
 	}
-	
+	void ej8() {
+		int capital;
+	}
 	
 	printf("Elija el programa que desea ejecutar: ");
 	scanf("%d", &decision);
