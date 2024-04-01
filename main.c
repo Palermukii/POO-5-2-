@@ -112,6 +112,11 @@ int main() {
 	}
 	void ej8() {
 		int capital;
+		double tasa_interes = 0.02;
+		printf("Ingrese capital inicial: ");
+		scanf("%d", &capital);
+		double monto_final = capital * (1 + tasa_interes);
+		printf("Su monto final es de %.2f", monto_final);
 	}
 	
 	printf("Elija el programa que desea ejecutar: ");
