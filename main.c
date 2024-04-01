@@ -14,15 +14,19 @@ int main() {
 		num2++;
 		num3++;
 	}
-	printf("Los numeros para que la suma de 87 son %d, %d y %d", num1, num2, num3);
-	}	
+	printf("Los numeros para que la suma de 87 son %d, %d y %d\n", num1, num2, num3);
+	system("pause");
+	}
+    	
 	void ej2() {
 		int num1, num2, num3;
 		printf("Digite los 3 numeros para sacar el promedio: ");
 		scanf("%d %d %d", &num1, &num2, &num3);
 		double promedio = (num1 + num2 + num3) / 3;
-		printf("El promedio es %.2f", promedio);
+		printf("El promedio es %.2f\n", promedio);
+		system("pause");
 	}
+	
 	void ej3() {
 		int num;
 		printf("Digite su numero positivo: ");
@@ -33,7 +37,10 @@ int main() {
 		else {
 			printf("El numero es impar");
 		}
+		printf("\n");
+		system("pause");
 	}
+	
 	void ej4() {
 		int nota1, nota2, nota3, nota4, tarea;
 		printf("Digite sus notas en orden poniendo como ultimo la nota de tarea: ");
@@ -45,7 +52,10 @@ int main() {
 		else {
 			printf("El alumno no esta aprobado y tiene promedio de %.2f", promedio);
 		}
-	}
+	    printf("\n");
+        system("pause");
+    }
+	
 	void ej5() {
 	int nota;
 	printf("Ingrese su nota: ");
@@ -62,8 +72,10 @@ int main() {
 		 printf("Reprobado, debes esforzarte mas");
 		 }
 	}
-	
+	printf("\n");
+    system("pause");
 	}
+	
 	void ej6() {
 		int sueldo;
 		double impuesto;
@@ -84,8 +96,10 @@ int main() {
 		else {
 			impuesto = sueldo * 0.25;
 		}
-		printf("El sueldo es de $%d y el impuesto de $%.2f", sueldo, impuesto);
+		printf("El sueldo es de $%d y el impuesto de $%.2f\n", sueldo, impuesto);
+		system("pause");
 	}
+	
 	void ej7() {
 		int horas;
 		int minutos;
@@ -108,15 +122,18 @@ int main() {
 				printf("%d:%d PM ", horas - 12, minutos);
 		}
 		}
-
+       	 printf("\n");
+         system("pause");
 	}
+	
 	void ej8() {
 		int capital;
 		double tasa_interes = 0.02;
 		printf("Ingrese capital inicial: ");
 		scanf("%d", &capital);
 		double monto_final = capital * (1 + tasa_interes);
-		printf("Su monto final es de %.2f", monto_final);
+		printf("Su monto final es de %.2f\n", monto_final);
+		system("pause");
 	}
 	
 	printf("Elija el programa que desea ejecutar: ");
@@ -145,6 +162,9 @@ int main() {
 			break;
 		case 7:
 			ej7();
+			break;
+		case 8:
+		ej8();
 			break;
 	}
 	
