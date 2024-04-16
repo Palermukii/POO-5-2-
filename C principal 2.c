@@ -11,7 +11,7 @@ while(edadP != edadH * 2) {
 edadP++;
 edadH++;
 }
-printf("El papa tendra el doble que el hijo en edad a los %d años y el hijo tendra %d años",edadP, edadH);
+printf("El papa tendra el doble que el hijo en edad a los %d aÃ±os y el hijo tendra %d aÃ±os",edadP, edadH);
 system("pause");
 }
 
