@@ -17,7 +17,7 @@ using namespace std;
 int precios[4] = {100,150,90,200}; // El array precios se inicializa aca para poder usar en el resto de las funciones
 
 
-void entrada(int cajas[6][4], int errores, int fueraDeProduccion[6]) {
+void entrada(int entregas[6][4], int errores, int fueraDeProduccion[6]) {
     int operario, tipo, cantidad; // Declaracion de variables utilizadas en la entrada de datos
     cout << "A continuación, ingrese los datos de las ventas: " << endl
          << Rojo "Al ingresar un operario o un tipo de alfajor inválido se terminará la entrada de datos" RESET_COLOR << endl;
@@ -41,8 +41,8 @@ void entrada(int cajas[6][4], int errores, int fueraDeProduccion[6]) {
         cout << "Y por último, ingrese la cantidad de alfajores: ";
         cin >> cantidad;
         if(cantidad < 1) {cantidad = 0;} // Si el usuario ingresa un numero negativo, la cantidad ingresada contara como 0 porque no se pueden entregar -5 alfajores
-        
-        cajas[operario - 1][tipo - 1] += cantidad;
+
+        entregas[operario - 1][tipo - 1] += cantidad;
 
         if (cantidad % 6 != 0) {
             errores++;
@@ -63,11 +63,11 @@ void calcularGanancias(int entregas[6][4]) {
         }
     }
     for(int i = 0; i < 4; i++) {
-        // Informar la ganancia por tipo de alfajor si se venden todas las CAJAS de los alfajores elaborados
+        // Informar la ganancia por tipo de alfajor si se venden todas las entregas de los alfajores elaborados
         cout << "Los alfajores de tipo " << tipos[i] << " consiguieron " << ganancias[i] << " ganancias" << endl;
         gananciasTotales += ganancias[i];
     }
-    cout << "Las ganancias totales son " << gananciasTotales << endl;
+    cout << "Las ganancias totales son " << gananciasTotales << endl; // El ejercicio no pide saber las ganancias totales pero hay una parte donde se mencionan, por lo que me parece un dato importante
 }
 
 void produccion(int entregas[6][4], int fueraDeProduccion[6]) {
@@ -83,18 +83,18 @@ void produccion(int entregas[6][4], int fueraDeProduccion[6]) {
             cout << Rojo "\tFuera de producción: " << fueraDeProduccion[i] << " alfajores" RESET_COLOR <<  endl;
         }
     }
-    
+
 }
 
 int main() {
     cout << Cyan "\t \t PRUEBA DE MATRICES \t \t" RESET_COLOR << endl;
     // Declaracion de variables y matrices
-    int cajas[6][4] = {0}; // La matriz cajas representa las entregas de cada operador ([6]) de cada tipo ([4])
+    int entregas[6][4] = {0}; // La matriz entregas representa las entregas de cada operador ([6]) de cada tipo ([4])
     int errores = 0;
     int fueraDeProduccion[6] = {0};
-    entrada(cajas, errores, fueraDeProduccion);
+    entrada(entregas, errores, fueraDeProduccion);
     cout << endl;
-    calcularGanancias(cajas);
+    calcularGanancias(entregas);
     cout << endl;
-    produccion(cajas, fueraDeProduccion);
+    produccion(entregas, fueraDeProduccion);
 }
