@@ -1,8 +1,8 @@
-package sb;
+package Main;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class kranki {
+public class Main {
 	public static void main(String[] args) {
 		Scanner myObj = new Scanner(System.in);
 		System.out.println("Elija un ejercicio: ");
@@ -70,10 +70,14 @@ public class kranki {
 
 		double area=Math.PI*Math.pow(radio, 2);
 		JOptionPane.showMessageDialog(null, "El area del circulo es " + area);
-		System.out.println("El area del circulo es "+area);
-	}
+		}
 	private static void ejercicio6() {
-		System.out.println("Hola");
+		String texto=JOptionPane.showInputDialog("Introduce un numero");
+		double numero = Double.parseDouble(texto);
+		if(numero % 2 == 0) {
+		JOptionPane.showMessageDialog(null, "El numero " + numero + " es divisible por dos");
+		}
+		else {	JOptionPane.showMessageDialog(null, "El numero " + numero + " no es divisible por dos");}
 	}
 	
 	
