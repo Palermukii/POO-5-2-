@@ -2,7 +2,7 @@ package Main;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class Main {
+public class Kranki {
 	public static void main(String[] args) {
 		Scanner myObj = new Scanner(System.in);
 		System.out.println("Elija un ejercicio: ");
@@ -26,6 +26,24 @@ public class Main {
 			break;
 		case 6:
 			ejercicio6();
+			break;
+		case 7:
+			ejercicio7();
+			break;
+		case 8:
+			ejercicio8();
+			break;
+		case 9:
+			ejercicio9();
+			break;
+		case 10:
+			ejercicio10();
+			break;
+		case 11:
+			ejercicio11();
+			break;
+		case 12:
+			ejercicio12();
 			break;
 		}
 		myObj.close();
@@ -79,6 +97,50 @@ public class Main {
 		}
 		else {	JOptionPane.showMessageDialog(null, "El numero " + numero + " no es divisible por dos");}
 	}
-	
-	
+	private static void ejercicio7() {
+		
+		String texto = JOptionPane.showInputDialog("Introduce un numero");
+		int numero = Integer.parseInt(texto);
+		char codigo = (char)numero;
+		
+		JOptionPane.showMessageDialog(null, "El numero " + numero + " es el caracter " + codigo + " en la tabla ASCII");
+		System.out.println(codigo);
+	} // No muestra bien el caracter del codigo ASCII
+	private static void ejercicio8() {
+        String texto=JOptionPane.showInputDialog("Introduce un caracter ASCII");
+        char caracter=texto.charAt(0);
+        int codigo=(int)caracter;
+		JOptionPane.showMessageDialog(null, "El caracter " + numero + " tiene el codigo " + codigo + " en la tabla ASCII");
+
+        System.out.println(codigo);
+	}
+	private static void ejercicio9() {
+		double IVA = 1.21;
+		String texto = JOptionPane.showInputDialog(null, "Ingrese un monto");
+		double monto = Double.parseDouble(texto);
+		double precioFinal = monto * IVA;
+		JOptionPane.showMessageDialog(null, "El precio final es de " + precioFinal);
+	}
+	private static void ejercicio10() {
+		int i = 1;
+		while(i <= 100) {
+		//	JOptionPane.showMessageDialog(null, i);
+			System.out.println(i);
+			i++;
+		}
+	}
+	private static void ejercicio11() {
+		for(int i = 1; i <= 100;i++) {
+			//	JOptionPane.showMessageDialog(null, i);
+				System.out.println(i);
+			}
+	}
+	private static void ejercicio12() {
+		for(int i = 1; i <= 100;i++) {
+			if(i % 6 == 0) {
+			//	JOptionPane.showMessageDialog(null, i);
+				System.out.println(i);
+			}
+		}
+	}
 }
