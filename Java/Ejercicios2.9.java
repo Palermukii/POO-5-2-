@@ -2,7 +2,7 @@ package Main;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class Kranki {
+public class Kranki{
 	public static void main(String[] args) {
 		Scanner myObj = new Scanner(System.in);
 		System.out.println("Elija un ejercicio: ");
@@ -44,6 +44,24 @@ public class Kranki {
 			break;
 		case 12:
 			ejercicio12();
+			break;
+		case 13:
+			ejercicio13();
+			break;
+		case 14:
+			ejercicio14();
+			break;
+		case 15:
+			ejercicio15();
+			break;
+		case 16:
+			ejercicio16();
+			break;
+		case 17:
+			ejercicio17();
+			break;
+		case 18:
+			ejercicio18();
 			break;
 		}
 		myObj.close();
@@ -142,5 +160,122 @@ public class Kranki {
 				System.out.println(i);
 			}
 		}
+	}
+	private static void ejercicio13() {
+		String texto=JOptionPane.showInputDialog("Introduce el número de ventas");
+		int numVentas=Integer.parseInt(texto);
+		int sumaVentas=0;
+		
+		for (int i=0;i<numVentas;i++){
+			texto=JOptionPane.showInputDialog("Introduce el precio de la venta"+(i+1));
+			int venta=Integer.parseInt(texto);
+ 
+			sumaVentas=sumaVentas+venta;
+		}
+ 
+		JOptionPane.showMessageDialog(null, "La suma de las ventas es de " + sumaVentas);
+	}
+	private static void ejercicio14() {
+		String textoA=JOptionPane.showInputDialog("Introduce el valor de a");
+		int a=Integer.parseInt(textoA);
+		String textoB=JOptionPane.showInputDialog("Introduce el valor de b");
+		int b=Integer.parseInt(textoB);
+		String textoC=JOptionPane.showInputDialog("Introduce el valor de c");
+		int c=Integer.parseInt(textoC);
+
+		double discriminante=Math.pow(b, 2)-(4*a*c);
+
+		System.out.println("El discriminante es " + discriminante);
+
+		if (discriminante>0){
+			double x1=((b*(-1))+Math.sqrt(discriminante))/(2*a);
+			double x2=((b*(-1))-Math.sqrt(discriminante))/(2*a);
+
+			System.out.println("El valor de x1 es " + x1 + " y el valor de x2 es " + x2);
+		}else{
+			System.out.println("El discriminante es negativo");
+		}
+	}
+	private static void ejercicio15() {
+		int numero;
+		do{
+			String texto=JOptionPane.showInputDialog("Introduce un numero mayor que 0");
+			numero=Integer.parseInt(texto);
+		}while(numero<=0);
+ 
+		System.out.println(numero);
+	}
+	private static void ejercicio16() {
+		Scanner myObj16 = new Scanner(System.in);
+		int intentos = 3;
+		boolean acierto = false;
+		String contrasenia = "Kranki";
+		String ingresada;
+		for(int i = 0; i<intentos && !acierto;i++) {
+			System.out.println("Ingrese una contraseña: ");
+			ingresada = myObj16.next();
+			if(ingresada.equals(contrasenia)) {
+				System.out.println("Contraseña acertada");
+				acierto = true;
+			}
+			
+		}
+	}
+	private static void ejercicio17() {
+		
+		Scanner myObj17 = new Scanner(System.in);
+		System.out.println("Introduce un dia de la semana");
+        String dia = myObj17.next();
+        
+        switch(dia){
+            case "lunes":
+            case "martes":
+            case "miercoles":
+            case "jueves":
+            case "viernes":
+                System.out.println("Es un dia laboral");
+                break;
+            case "sabado":
+            case "domingo":
+                System.out.println("Es un dia festivo");
+            default:
+                System.out.println("Introduce un dia de la semana");
+        }
+	}
+	private static void ejercicio18() {
+		Scanner myObj18 = new Scanner(System.in);
+		System.out.println("Ingrese el primer numero: ");
+		int num1 = myObj18.nextInt();
+		System.out.println("Ingrese el segundo numero: ");
+		int num2 = myObj18.nextInt();
+		if(num2 > num1) { // En caso de que el segundo numero ingresado sea menor al primero
+			int aux;
+			aux = num1;
+			num1 = num2;
+			num2 = aux;
+		}
+		int[] numeros = new int[10];
+		for(int i = 0; i<numeros.length;i++) {
+			numeros[i] = (int)Math.floor(Math.random() * (num1 - num2) + num2);
+		}
+		for(int i = 0; i<numeros.length;i++) {
+			System.out.println(numeros[i]);
+		}
+	}
+	private static void ejercicio19() {
+		Scanner myObj19 = new Scanner(System.in);
+        int numero=0;
+        do{
+            System.out.println("Introduce un numero");
+            numero=myObj19.nextInt();
+        }while(numero<0); int contador=0; for (int i=numero;i>0;i/=10){
+            contador++;
+        }
+ 
+        if (contador==1){
+            System.out.println("El numero "+numero+ " tiene "+contador+" cifra");
+        }else{
+            System.out.println("El numero "+numero+ " tiene "+contador+" cifras");
+        }
 	}
 }
