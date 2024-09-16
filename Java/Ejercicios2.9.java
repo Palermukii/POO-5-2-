@@ -63,6 +63,9 @@ public class Kranki{
 		case 18:
 			ejercicio18();
 			break;
+		case 19:
+			ejercicio19();
+			break;
 		}
 		myObj.close();
 	}
