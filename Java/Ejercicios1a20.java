@@ -2,7 +2,7 @@ package Main;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class Kranki{
+public class Main{
 	public static void main(String[] args) {
 		Scanner myObj = new Scanner(System.in);
 		System.out.println("Elija un ejercicio: ");
@@ -66,6 +66,10 @@ public class Kranki{
 		case 19:
 			ejercicio19();
 			break;
+        case 20:
+			ejercicio20();
+			break;
+
 		}
 		myObj.close();
 	}
@@ -281,4 +285,33 @@ public class Kranki{
             System.out.println("El numero "+numero+ " tiene "+contador+" cifras");
         }
 	}
+	private static void ejercicio20() {
+		Scanner myObj20 = new Scanner(System.in);
+        System.out.println("Escribi un numero");
+        int numero = myObj20.nextInt();
+ 
+		if (numero <= 1) {
+            System.out.println("El numero " + numero + " no es primo");
+        } else {
+ 
+            int raiz = (int) Math.sqrt(numero);
+            int contador = 0;
+ 
+            for (int i = raiz; i > 1; i--) {
+                if (numero % i == 0) {
+                    contador++;
+                }
+            }
+            System.out.println(">>" + contador);
+ 
+            if (contador < 1) {
+                System.out.println("El numero " + numero + " es primo");
+            } else {
+                System.out.println("El numero " + numero + " no es primo");
+            }
+ 
+        }
+    }
+    
+
 }
